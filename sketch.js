@@ -25,7 +25,7 @@ function setup() {
 bg.addImage(bgImg)
 bg.scale = 1.1
   
-
+bullet= createSprite(-100,-100,0.5,0.5)
 //creating the player sprite
 player = createSprite(displayWidth-1150, displayHeight-300, 50, 50);
  player.addImage(shooterImg)
@@ -68,9 +68,12 @@ else if(keyWentUp("space")){
   player.addImage(shooterImg)
 }
 
-if(bullet.isTouching(player)){
-  score=score+5
-}
+for(var i =0;i<zombieGroup;i++){
+    if(zombieGroup[i].isTouching(bullet)){
+      zombieGroup[i].removeEach()
+      console.log("zombieGroup")
+    }
+   }
 
 drawSprites();
 spawnZombie();
