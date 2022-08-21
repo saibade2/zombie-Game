@@ -90,5 +90,6 @@ function spawnZombie(){
     zombie.velocityX = -3
     zombie.scale=0.15
    zombieGroup.add(zombie) 
+    zombie.debug=true
   }
 }
